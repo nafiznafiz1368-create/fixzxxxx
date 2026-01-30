@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ppt sosiologi</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* --- PENGATURAN DASAR --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body, html {
+            font-family: 'Times New Roman', serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory; /* Scroll otomatis berhenti di tiap halaman */
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            scroll-snap-align: start;
+            overflow: hidden;
+        }
+
+        /* --- HALAMAN 1 --- */
+        #page1 {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.20)), url("12.jpeg") center/cover;
+            justify-content: space-between;
+            padding: 0 10%;
+        }
+
+        /* --- HALAMAN 2 (FOTO KERETA API / MARQUEE) --- */
+        #page2 { background: #000; flex-direction: column; }
+
+        .marquee-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            z-index: 1;
+            opacity: 0.4; /* Background foto dibuat redup agar teks jelas */
+        }
+
+        .marquee-row {
+            display: flex;
+            width: max-content; /* Memanjang mengikuti jumlah foto */
+            gap: 20px;
+        }
+
+        .marquee-row img {
+            width: 280px;  /* Foto dibuat agak besar */
+            height: 380px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Animasi Baris Atas ke Kiri */
+        .left-scroll { animation: scroll-left 12s linear infinite; }
+
+        /* Animasi Baris Bawah ke Kanan */
+        .right-scroll { animation: scroll-right 12s linear infinite; }
+
+        @keyframes scroll-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); } /* Geser setengah panjang kontainer */
+        }
+
+        @keyframes scroll-right {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+
+        /* Teks Tengah Halaman 2 */
+        .center-msg {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(0,0,0,0.6); /* Bayangan hitam transparan di belakang teks */
+            padding: 40px;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        /* --- HALAMAN 3, 4, 5 --- */
+        #page3 { background: url("2.png") center/cover; color: #333; justify-content: space-around; }
+        .card { background: white; padding: 30px; border-radius: 15px; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .img-red { border: 10px solid #d32f2f; width: 300px; border-radius: 20px; }
+        
+        #page4 { background-color: #7ba1c7; }
+        #page5 { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("3.jpeg") center/cover; }
+
+        .scroll-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; opacity: 0.7; }
+        @keyframes bounce { 0%, 100% { bottom: 20px; } 50% { bottom: 35px; } }
+    </style>
+</head>
+<body>
+
+    <section id="page1">
+        <div data-aos="fade-right" style="font-size: 4rem;">Ragam Gejala Sosial dalam <br>masyarakat!</div>
+        <div data-aos="zoom-in" style="font-size: 7rem; font-style: italic;">kelompok 5</div>
+        <div class="scroll-hint">Gulir kebawah ↓</div>
+    </section>
+
+    <section id="page2">
+        <div class="marquee-container">
+            <div class="marquee-row left-scroll">
+                <img src="4.jpeg">
+                <img src="5.jpeg">
+                 <img src="13.jpeg">
+                <img src="14.jpeg" <img src="15.jpg">
+                <img src="16.png">
+                 <img src="12.jpeg">
+                <img src="15.jpg"<img src="4.jpeg">
+                <img src="5.jpeg">
+                <img src="6.jpeg">
+             <img src="7.jpeg">
+                <img src="8.jpeg">
+                <img src="9.jpeg">
+                <img src="10.jpeg">
+                   <img src="11.jpeg">
+                <img src="12.jpeg"
+                          <img src="2.jpeg">
+               ></div>
+
+            <div class="marquee-row right-scroll">
+                          <img src="3.jpeg">
+              <img src="4.jpeg">
+                <img src="5.jpeg">
+                <img src="6.jpeg">
+             <img src="7.jpeg">
+                <img src="8.jpeg">
+                <img src="9.jpeg">
+                <img src="10.jpeg">
+                   <img src="11.jpeg">
+                <img src="12.jpeg"
+                          <img src="2.jpeg">
+                <img src="3.jpeg">
+              <img src="4.jpeg">
+                <img src="5.jpeg">
+                <img src="6.jpeg">
+             <img src="7.jpeg">
+                <img src="8.jpeg">
+                <img src="9.jpeg">
+                <img src="10.jpeg">
+                   <img src="11.jpeg">
+                <img src="12.jpeg"></div>
+        </div>
+
+        <div class="center-msg" data-aos="zoom-out">
+            <h1 style="font-size: 10rem; line-height: 1;">Diferensiasi Sosial</h1>
+            <p style="font-size: 2.5rem;">Diferensiasi Sosial: Perbedaan masyarakat secara horizontal (sejajar). Contoh: Perbedaan agama, suku, ras, dan profesi. Tidak ada yang lebih tinggi atau rendah.</p>
+        </div>
+    </section>
+
+    <section id="page3">
+        <div class="card" data-aos="fade-right">
+            <h2 style="color:#d32f2f">Stratifikasi Sosial</h2>
+            <p>Perbedaan masyarakat secara vertikal (bertingkat/hierarki). Contoh: Perbedaan kekayaan, kekuasaan, dan tingkat pendidikan (kelas atas, menengah, bawah).</p>
+        </div>
+        <img src="9.jpg">
+    </section>
+
+    <section id="page5">
+        <div style="text-align: center;">
+            <h1 style="font-size: 5rem;" data-aos="zoom-in">sekian dari kelompok kami, apabila ada pertanyaan boleh bertanya!</p>
+        </div></h1>
+            <p style="font-size: 3rem; font-family: Georgia; font-style: italic;">.,..</p>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false });
+    </script>
+</body>
+</html>
